@@ -22,7 +22,7 @@ export default function Dashboard() {
         setLoading(true)
         const supabase = createClient()
         const { data, error } = await supabase
-            .from("links")
+            .from("urls")
             .select("*")
             .order("created_at", { ascending: false })
 

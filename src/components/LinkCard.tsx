@@ -34,7 +34,7 @@ export function LinkCard({ link, onDelete }: { link: LinkData; onDelete: () => v
     const handleDelete = async () => {
         if (!confirm("Are you sure?")) return
         const supabase = createClient()
-        await supabase.from("links").delete().eq("id", link.id)
+        await supabase.from("urls").delete().eq("id", link.id)
         onDelete()
     }
 

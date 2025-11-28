@@ -10,7 +10,7 @@ export async function GET(
 
     // Fetch the link
     const { data: link, error } = await supabase
-        .from("links")
+        .from("urls")
         .select("original_url, id, clicks")
         .eq("slug", slug)
         .single()
@@ -22,7 +22,7 @@ export async function GET(
 
     // Increment clicks (asynchronously)
     await supabase
-        .from("links")
+        .from("urls")
         .update({ clicks: link.clicks + 1 })
         .eq("id", link.id)
 

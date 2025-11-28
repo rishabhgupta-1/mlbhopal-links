@@ -32,7 +32,7 @@ export function CreateLinkModal({ onLinkCreated }: { onLinkCreated: () => void }
         const finalSlug = slug || Math.random().toString(36).substring(2, 8)
 
         const { error: insertError } = await supabase
-            .from("links")
+            .from("urls")
             .insert({
                 original_url: url,
                 slug: finalSlug,
