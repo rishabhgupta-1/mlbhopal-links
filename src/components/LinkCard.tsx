@@ -19,7 +19,9 @@ export function LinkCard({ link, onDelete }: { link: LinkData; onDelete: () => v
     const [origin, setOrigin] = useState("")
 
     useEffect(() => {
-        setOrigin(window.location.origin)
+        if (typeof window !== "undefined") {
+            setOrigin(window.location.origin)
+        }
     }, [])
 
     const shortUrl = origin ? `${origin}/${link.slug}` : `/${link.slug}`
