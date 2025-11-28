@@ -26,6 +26,11 @@ export default function Dashboard() {
             .select("*")
             .order("created_at", { ascending: false })
 
+        if (error) {
+            console.error("Error fetching links:", error)
+            alert("Error fetching links: " + error.message)
+        }
+
         if (data) {
             setLinks(data)
         }

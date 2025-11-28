@@ -39,6 +39,7 @@ export function CreateLinkModal({ onLinkCreated }: { onLinkCreated: () => void }
             })
 
         if (insertError) {
+            console.error("Error creating link:", insertError)
             setError(insertError.message)
         } else {
             setOpen(false)
